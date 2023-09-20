@@ -65,11 +65,9 @@ Utilizaremos el comando `docker system df` y ahí podremos comprobar lo que ocup
 |Build Cache|0|0|0B|0B|
 
 ### 8. RAM que consumen los contenedores.
+La RAM que consumen los contenedores se puede ver fácilmente con el comando `docker stats` y nos debería mostrar algo similar a esto:
 
-
-
+|CONTAINER ID|NAME|CPU %|MEM USAGE / LIMIT|MEM %|NET I/O|BLOCK I/O|PIDS|
 |------|------|------|------|------|------|------|------|
-
-|CONTAINER ID|NAME|CPU %|MEM USAGE / LIMIT|     MEM %|     NET I/O|          BLOCK I/O|         PIDS
-|9eef3231d55f|dam_ubu2|0.00%|     65.39MiB / 15.39GiB   0.41%     29MB / 736kB     24.8MB / 73.9MB   2
-|43ba719d593f|dam_ubu1|0.00%|     45.87MiB / 15.39GiB   0.29%     28.9MB / 673kB   8.19kB / 74.4MB   1
+|9eef3231d55f|dam_ubu2|0.00%|65.39MiB / 15.39GiB|0.41%|29MB / 736kB|24.8MB / 73.9MB|2|
+|43ba719d593f|dam_ubu1|0.00%|45.87MiB / 15.39GiB|0.29%|28.9MB / 673kB|8.19kB / 74.4MB|1|
