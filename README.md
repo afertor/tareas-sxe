@@ -21,4 +21,17 @@ Para esto escribiremos el comando `docker run -it ubuntu` y el contenedor se enc
 
 
 ### 3. Crear contenedor con nombre.
-Para crear un contenedor con nombre usaremos el siguiente comando `docker run -it --name dam_ubu1 ubuntu` y al crearse ya podríamos acceder a el contenedor agregandole -it
+Para crear un contenedor con nombre usaremos el siguiente comando `docker run -it --name dam_ubu1 ubuntu` y al crearse ya podríamos acceder a el contenedor agregandole -it. Si el contenedor se apaga utilizaremos el comando `docker start "nombre_contenedor"` y asi podremos acceder al contenedor.
+
+Al ejecutar el comando `docker ps` nos debería aparecer lo siguiente despues de crear el contenedor y si este esta en funcionamiento:
+
+|CONTAINER ID|IMAGE|COMMAND|CREATED|STATUS|PORTS|NAMES|
+|------|------|------|------|------|------|------|
+|9eef3231d55f|ubuntu|"/bin/bash"|9 seconds ago|Up 8 seconds||dam_ubu2|
+
+### 4. Comprobación de la ip y ping a google.
+a) Lo primero que debemos hacer es estar dentro del contenedor. Una vez dentro escribiremos el comando `apt update` este comando actualiza la lista de paquetes. Despues pondremos `apt install net-tools` para descargar el paquete de net-tools y por ultimo utilizaremos `ipconfig` y ahí podremos ver la ip.
+
+b) Para poder comprobar si podemos hacer un ping a google.com primero tendremos que instalar el paquete con el siguiente comando `apt install iputils-ping` esto descargará el paquete para poder hacer el ping. 
+Ahora para hacer el ping usaremos este comando `ping google.com` y así es como se haría un ping a google.com y para pararlo usariamos Ctrl+C.
+
