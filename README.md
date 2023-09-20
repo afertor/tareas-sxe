@@ -44,5 +44,32 @@ Ahora para hacer el ping usaremos este comando `ping google.com` y así es como 
 
  ### 5. Creación de contenedor con nombre y ping entre contenedores.
  Para crear el contenedor usaremos el mismo comando que usamos previamente `docker run -it --name dam_ubu2 ubuntu`.
- Haremos la instalación de los paquetes con los siguientes comandos `apt update`,`apt install net-tools`, `apt install iputils-ping`. Ahora que estan instalados los paquetes en los dos contenedores usaremos el comando `ping 172.17.0.3` (la ip del comando es la ip del contenedor al cual le quieres hacer el ping)
+ Haremos la instalación de los paquetes con los siguientes comandos `apt update`,`apt install net-tools`, `apt install iputils-ping`. Ahora que estan instalados los paquetes en los dos contenedores usaremos el comando `ping 172.17.0.3` (la ip del comando es la ip del contenedor al cual le quieres hacer el ping) y nos saldrá lo mismo que no salía al hacer el ping a google; Para pararlo le daremos a Ctrl+C y nos mostrará un resumen del ping.
 
+
+<br></br>
+
+### 6. Salir de la terminal con el contenedor abierto.
+Para salir utilizaremos el comando `exit` y si este tiene un nombre se guardará y lo podremos abrir siempre que queramos.
+
+<br></br>
+
+### 7. Espacio ocupado en el disco duro.
+Utilizaremos el comando `docker system df` y ahí podremos comprobar lo que ocupan los contenedores en el disco duro. Nos debería mostrar algo similar a esto:
+
+|TYPE|TOTAL|ACTIVE|SIZE|RECLAIMABLE|
+|------|------|------|------|------|
+|Images|5|5|421.7MB|0B (0%)|
+|Containers|26|2|342.9MB|250.4MB (73%)|
+|Local Volumes|0|0|0B|0B|
+|Build Cache|0|0|0B|0B|
+
+### 8. RAM que consumen los contenedores.
+
+
+
+|------|------|------|------|------|------|------|------|
+
+|CONTAINER ID|NAME|CPU %|MEM USAGE / LIMIT|     MEM %|     NET I/O|          BLOCK I/O|         PIDS
+|9eef3231d55f|dam_ubu2|0.00%|     65.39MiB / 15.39GiB   0.41%     29MB / 736kB     24.8MB / 73.9MB   2
+|43ba719d593f|dam_ubu1|0.00%|     45.87MiB / 15.39GiB   0.29%     28.9MB / 673kB   8.19kB / 74.4MB   1
