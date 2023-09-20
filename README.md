@@ -29,9 +29,20 @@ Al ejecutar el comando `docker ps` nos debería aparecer lo siguiente despues de
 |------|------|------|------|------|------|------|
 |9eef3231d55f|ubuntu|"/bin/bash"|9 seconds ago|Up 8 seconds||dam_ubu2|
 
+
+<br></br>
+
 ### 4. Comprobación de la ip y ping a google.
 a) Lo primero que debemos hacer es estar dentro del contenedor. Una vez dentro escribiremos el comando `apt update` este comando actualiza la lista de paquetes. Despues pondremos `apt install net-tools` para descargar el paquete de net-tools y por ultimo utilizaremos `ipconfig` y ahí podremos ver la ip.
 
 b) Para poder comprobar si podemos hacer un ping a google.com primero tendremos que instalar el paquete con el siguiente comando `apt install iputils-ping` esto descargará el paquete para poder hacer el ping. 
-Ahora para hacer el ping usaremos este comando `ping google.com` y así es como se haría un ping a google.com y para pararlo usariamos Ctrl+C.
+Ahora para hacer el ping usaremos este comando `ping google.com` y así es como se haría un ping a google.com y para pararlo usariamos Ctrl+C, al pararlo te mostrará un resumen del ping.
+
+
+<br></br>
+
+
+ ### 5. Creación de contenedor con nombre y ping entre contenedores.
+ Para crear el contenedor usaremos el mismo comando que usamos previamente `docker run -it --name dam_ubu2 ubuntu`.
+ Haremos la instalación de los paquetes con los siguientes comandos `apt update`,`apt install net-tools`, `apt install iputils-ping`. Ahora que estan instalados los paquetes en los dos contenedores usaremos el comando `ping 172.17.0.3` (la ip del comando es la ip del contenedor al cual le quieres hacer el ping)
 
