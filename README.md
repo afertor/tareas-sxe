@@ -11,9 +11,14 @@ Para comprobar que lo tenemos descargado utilizaremos el comando `docker images 
 
 <br></br>
 ### 2. Creación de contenedor sin nombre.
-Para esto escribiremos el comando `docker run -it ubuntu` y el contenedor se encenderá y generará un nombre aleatorio. Para comprobar que esta encendido pondremos el comando `docker ps -a` en otra ventana diferente.
+Para esto escribiremos el comando `docker run -it ubuntu` y el contenedor se encenderá y generará un nombre aleatorio. Para comprobar que esta encendido pondremos el comando `docker ps -a` en otra ventana diferente y nos debería aparecer lo siguiente:
 
 |CONTAINER ID|IMAGE|COMMAND|CREATED|STATUS|PORTS|NAMES|
 |------|------|------|------|------|------|------|
 |3bf6b126e984|ubuntu|"/bin/bash" |8 minutes ago|Exited (0) 8 minutes ago||vibrant_robinson|
+
 <br></br>
+
+
+### 3. Crear contenedor con nombre.
+Para crear un contenedor con nombre usaremos el siguiente comando `docker run -it --name dam_ubu1 ubuntu` y al crearse ya podríamos acceder a el contenedor agregandole -it
